@@ -1,0 +1,40 @@
+.title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    h1{
+        font-size: 6rem;
+        line-height: 6rem;
+        font-weight: 900;
+        color: var(--Primary-color);
+        font-family: Playfair Display, serif;
+    }
+    h2{
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--Primary-color);
+    }
+    p{
+        font-size: 1rem;
+    }
+}
+.glasscube{
+    z-index: -1;
+    position: absolute;
+    top: 70vh;
+    translate: 0% -50%;
+    scale: 1.75;
+    animation: scaling 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes scaling{
+    0%{
+        translate: 0 0%;
+        scale: 1;
+    }
+    100%{
+        scale: 1.75;
+    }
+
+}
