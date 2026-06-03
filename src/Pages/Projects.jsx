@@ -1,4 +1,5 @@
 import { getProjects } from "../DataImport";
+import { client } from "../lib/sanityClient";
 import { useState } from "react";
 import { useEffect } from "react";
 

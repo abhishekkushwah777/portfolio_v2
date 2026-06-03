@@ -1,16 +1,20 @@
-import { useState } from "react";
-import NavBar from "./Components/NavBar";
-import { useEffect } from "react";
-import { client } from "./lib/sanityClient";
 import Projects from "./Pages/Projects";
 import Home from "./Pages/Home";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Skills from "./Pages/Skills";
+import CustomCursor from "./Components/cursor";
 
 function App() {
   return (
-    <div className="app">
-      <NavBar />
-      <Home />
-    </div>
+    <>
+    <CustomCursor />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/skills" element={<Skills />} />
+      </Routes>
+    </>
   )
 }
 

@@ -1,31 +1,36 @@
 import { useState } from "react";
 import "../Styles/NavBar.css"
-import Moon from "./public/Icons/moon-02-stroke-rounded.svg?react";
-import Sun from "./public/Icons/sun-01-stroke-rounded.svg?react";
+import { Link } from "react-router-dom";
+import Icon from  "./Icons";
+import Button from "./Buttons";
 
 function NavBar() {
     const [darkMode, setDarkMode] = useState(false);
 
     const ToggleDarkmode = () => {
       document.body.classList.toggle("DarkMode");
+      console.log("Dark mode toggled");
   
       setDarkMode(!darkMode);
     };
     return (
         <div className="navBar">
            <div className="left">
-            <button onClick={ToggleDarkmode}>
-                <img 
-                src={darkMode ? "/Icons/moon-02-stroke-rounded.svg" : "/Icons/sun-01-stroke-rounded.svg"} alt="" />
-            </button>
+           <Button name="icon" onClick= {ToggleDarkmode}
+                icon={darkMode ? (
+                <Icon name="moon" />
+                    ) : (
+                <Icon name="sun" />
+                )}
+            />
            </div>
            <div className="middle">
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Projects</li>
-                <li>Contact</li>
-            </ul>
+            <nav>
+                <Link to="/">Home</Link>
+                <Link to="/about">About</Link>
+                <Link to="/projects">Projects</Link>
+                <Link to="/contact">Contact</Link>
+            </nav>
            </div>
            <div className="right">
             <button>Download CV</button>
